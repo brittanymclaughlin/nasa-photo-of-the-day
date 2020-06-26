@@ -16,16 +16,24 @@ useEffect(()=>{
     .catch(err=>console.log(err))
 }, []);
  console.log(data);
-
  let newData = [];
+ data.forEach(poke => {
+   if(poke.nationalPokedexNumber){
+     newData.push(poke);
+   } else{
 
+   };
+  
+ })
+ console.log(newData);
   return (
     <div className="App">
       <h1>
         Pokemon<span role="img" aria-label="pokelove">❤️</span>Pokedex!
       </h1>
+     
 
-      {data.map(pokeData => {
+      {newData.map(pokeData => {
         return( 
           <PokeCard 
             key={pokeData.id}
